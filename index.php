@@ -40,7 +40,7 @@
       <li><i class="fas fa-check"></i> Help nurses and health care providers</li>
       <li><i class="fas fa-check"></i> Find local help in your community</li>
       <li><i class="fas fa-check"></i> Let people know what you need</li>
-      <li><i class="fas fa-check"></i >Help your community get through</li>
+      <li><i class="fas fa-check"></i >Help from your community get through</li>
 </ul>
     </ul>
     <form id='signup'>

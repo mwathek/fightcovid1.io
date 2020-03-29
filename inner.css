@@ -74,13 +74,13 @@ footer {
   color: #fff;
 }
 footer p {
-  word-spacing: -3px:
+  word-spacing: -3px;
   float: left;
 }
 footer ul#so {
   float: right;
   padding: 0;
-  margin: 6px 0 0 0;
+  margin: -36px 0 0 0;
 }
 footer ul#so li {
   float: left;
@@ -120,7 +120,7 @@ h1#logo span {
 }
 .hm-cnt {
   width: 482px;
-  margin: 120px auto;
+  margin: 80px auto;
 }
 h1.logo-des {
   width: 340px;
