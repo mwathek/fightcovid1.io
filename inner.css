@@ -7,6 +7,9 @@ body {
   font-family: "Muli", sans-serif;
   background: #f9f9f9;
 }
+body.inner {
+  background: #fff;
+}
 
 ul {
   list-style-type: none;
@@ -29,12 +32,15 @@ header img {
 }
 ul#nav-links {
   float: left;
-  color: #888;
+  color: #54c3bf;
   font-weight: bold;
-  border-left: solid 2px #eeee;
+  border-left: solid 1px #ddd;
   padding: 4px 0;
   padding-left: 20px;
   margin: 9px 0 0 20px;
+  /* text-transform: uppercase; */
+  font-size: 12px;
+  /* letter-spacing: 1px; */
 }
 ul#nav-links li {
   float: left;
@@ -48,30 +54,34 @@ ul#act {
 ul#act li {
   float: left;
   padding: 3px 8px;
-  background: #c10e0e;
-  border-radius: 3px;
-  margin-right: 12px;
-  color: #fff;
+  color: #c10e0e;
+  border-radius: 30px;
+  margin-right: 8px;
+  background: #f3f3f3;
   font-weight: bold;
+  border: solid 1px #e4e4e4;
 }
 ul#act li i {
-  margin-right: 3px;
-  color: rgba(255, 255, 255, 0.7);
+  margin-right: 2px;
+  color: #c10e0e;
 }
 ul#act li#login {
   margin-right: 0;
-  background: #54c3bf;
+  color: #54c3bf;
+}
+ul#act li#login i{
+  color: #54c3bf;
 }
 footer {
   width: 100%;
-  background: #060606;
+  background: #fff;
   height: 42px;
-  border-bottom: solid 1px #eee;
+  border-top: solid 1px #eee;
   padding: 0 32px;
   overflow: hidden;
   box-sizing: border-box;
   font-weight: bold;
-  color: #fff;
+  color: #666;
 }
 footer p {
   word-spacing: -3px;
@@ -80,7 +90,7 @@ footer p {
 footer ul#so {
   float: right;
   padding: 0;
-  margin: -36px 0 0 0;
+  margin: 7px 0 0 0;
 }
 footer ul#so li {
   float: left;
@@ -101,6 +111,7 @@ footer ul li#fb {
 }
 div#container {
   display: flex;
+  min-height: calc(100vh - 42px);
 }
 h1#logo {
   color: #c10e0e;
@@ -120,7 +131,7 @@ h1#logo span {
 }
 .hm-cnt {
   width: 482px;
-  margin: 80px auto;
+  margin: 80px auto 38px;
 }
 h1.logo-des {
   width: 340px;
@@ -173,15 +184,15 @@ form#signup {
   width: 100%;
   padding: 5px;
   width: 340px;
-  margin: 5px auto;
+  margin: -5px auto 5px auto;
   text-align: center;
 }
 form#signup h3 {
-  font-size: 20px;
+  font-size: 16px;
   margin: 8px 0;
 }
 form#signup h3 span {
-  color: #40bd40;
+  color: #c10e0e;
 }
 form#signup input {
   float: left;
@@ -203,18 +214,23 @@ form#signup input#un {
   width: 34%;
   margin-left: 4%;
 }
+form#signup input#up {
+  width: 48%;
+}
+form#signup input#uc {
+  width: 48%;
+  margin-left: 4%;
+}
 form#signup button {
   padding: 6px 12px;
-  background: #54c3bf;
-  border: 0;
-  color: #fff;
-  font-size: #fff;
+  background: transparent;
+  border: solid 3px #54c3bf;
+  color: #54c3bf;
   font-weight: bold;
   font-size: 14px;
   letter-spacing: 2px;
   border-radius: 80px;
   margin: 6px;
-  text-transform: uppercase;
 }
 .hm-info {
   border-top: solid 1px #ddd;
@@ -222,29 +238,38 @@ form#signup button {
 }
 .hm-info p {
   font-size: 12px;
-  color: #a9a9a9;
+  color: #7d7d7d;
   text-align: justify;
   font-family: monospace;
-  margin: 0px 0;
+  margin: -8px 0;
   line-height: 16px;
   letter-spacing: 0;
+  font-weight: normal;
 }
 .hm-cnt h2 {
-  font-size: 11px;
-  width: 280px;
+  font-size: 12px;
+  width: 100%;
   text-align: center;
   background: #fbe3f7;
   float: left;
-  margin: -8px auto 5px 70px;
+  margin: -8px auto -5px 0px;
   color: #d61387;
   border-radius: 4px;
-  padding: 4px 28px;
-  text-align: justify;
+  padding: 4px 12px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.hm-cnt h2 i {
+  font-weight: 900;
+  font-size: 20px;
+  float: left;
+  margin-right: 12px;
+  margin-top: 5px;
 }
 .hm-info h5 {
   font-size: 12px;
-  color: #666;
-  margin: 8px 0;
+  color: #292929;
+  margin: 20px 0;
   line-height: 18px;
 }
 .hm-info h5 a {
@@ -261,12 +286,12 @@ ul#ftr li {
   width: 48%;
   border: solid 2px #f1f1f1;
   padding: 3px 8px;
-  color: #54c3bf;
+  color: #16b5a0;
   font-weight: bold;
-  font-size: 10.5px;
+  font-size: 11px;
   padding: 4px 8px;
-  border-radius: 8px;
-  background: #f7f7f7;
+  border-radius: 4px;
+  background: #f3f3f3;
   box-sizing: border-box;
 }
 ul#ftr li:nth-child(even) {
@@ -274,4 +299,174 @@ ul#ftr li:nth-child(even) {
 }
 ul#ftr li i {
   margin-right: 2px;
+  font-size: 12px;
+  color: #1a9e8d;
+}
+
+.content {
+  width: 800px;
+  height: auto;
+  background: #fff;
+  overflow: hidden;
+  margin: 0 auto;
+  border-right: solid 1px #eee;
+}
+#sidebar {
+  background: #fff;
+  overflow: hidden;
+  width: 100px;
+  float: left;
+  height: 100%;
+  border-right: solid 1px #ddd;
+  box-sizing: border-box;s
+}
+#sidebar img#logo {
+  width: 80px;
+  margin: 12px 10px;
+}
+img#user {
+  width: 80px;
+  margin: -5px 10px;
+  box-sizing: border-box;
+  border: solid 3px #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0 2px 0px #00000054;
+}
+#act {
+  height: 42px;
+}
+#act ul {
+  float: right;
+  margin-right: 20px;
+}
+#act ul li {
+  float: left;
+  margin-left: 12px;
+  font-size: 16px;
+  color: #54c3bf;
+}
+.inner-content {
+  float: left;
+  width: calc(100% - 100px);
+}
+.myact {
+  text-align: center;
+  width: 360px;
+  margin: 40px auto;
+}
+.myact h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.myact h3 i {
+  font-size: 80px;
+  color: #54c3bf;
+  margin-bottom: 10px;
+}
+.myact p {
+  font-size: 12px;
+  font-weight: bold;
+  color: #9e9e9e;
+  margin: -10px 3px 5px;
+  border-bottom: solid 1px #ddd;
+  padding-bottom: 10px;
+}
+.myact form {
+  overflow: hidden;
+  padding: 3px;
+}
+.myact input,
+.myact textarea,
+.myact select {
+  width: 100%;
+  border: solid 2px;
+  float: left;
+  font-weight: bold;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: solid 2px #0000000d;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 12px;
+  /* box-shadow: inset 0 0 3px 1px #54c3bf78; */
+  letter-spacing: 1px;
+  background: #54c3bf1f;
+  margin: 6px 0;
+}
+.myact textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 60px;
+}
+.myact select {
+  border-radius: 2px;
+  padding: 10px 8px;
+  width: 27%;
+  margin-left: 4%;
+  height: 31px;
+  line-height: 20px;
+  /* margin-top: 10px; */
+}
+input#age {
+  width: 15%;
+}
+select#gn {
+  width: 20%;
+  margin-left: 4%;
+}
+input#zip {
+  width: 26%;
+  margin-left: 4%;
+}
+input#oc {
+  width: 48%;
+}
+input#phone {
+  width: 48%;
+  margin-left: 4%;
+}
+.myact button {
+  padding: 6px 12px;
+  background: #ffffff;
+  border: 0;
+  color: #54c3bf;
+  font-size: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 2px;
+  border-radius: 80px;
+  margin: 6px;
+  border: solid 3px #54c3bf;
+}
+.myact label {
+  float: left;
+  text-align: left;
+  margin: 8px 0;
+  font-weight: bold;
+  font-size: 12px;
+  color: #666;width:100%;
+}
+.radio-input {
+  float: left;
+  margin: 8px 12px 8px 0;
+  font-weight: bold;
+}
+.radio-bg {
+  background: #eee;
+  width: 14px;
+  height: 14px;
+  border-radius: 40px;
+  box-shadow: 0 0 2px #00000094;
+  float: left;
+  margin-right: 8px;
+  padding: 3px;
+  box-sizing: border-box;
+  margin-top: 1px;
+}
+
+.radio-btn {
+  width: 100%;
+  height: 100%;
+  background: #1eacb5;
+  border-radius: 40px;
 }
