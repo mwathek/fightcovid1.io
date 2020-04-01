@@ -31,6 +31,30 @@
   footer {
     padding: 0 20px;
   }
+  #sidebar {
+    overflow: hidden;
+    width: 52px;
+    height: 100%;
+}
+.inner-content {
+    float: left;
+    width: calc(100% - 60px);
+    padding: 20px 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+  img#user {
+    margin: 6px 6px;
+    box-sizing: border-box;
+    border: solid 0px #fff;
+    border-radius: 2px;
+    box-shadow: 0px 0 0px 0px transparent;
+    position: fixed;
+    width: 40px;
+}
+#sidebar img#logo {
+    display: none;
+}
 }
 @media only screen and (max-width: 480px) {
   span.smlr {
@@ -43,6 +67,9 @@
     margin-right: 8px;
     margin-top: 4px;
   }
+  ul#ftr li {
+    font-size: 11px;
+}
 }
 @media only screen and (max-width: 450px) {
   span.smlr {
@@ -55,6 +82,31 @@
     margin-right: 6px;
     margin-top: 3px;
   }
+    .myact {
+    text-align: center;
+    width: 100%;
+    margin: 0px auto;
+}
+.myact select {
+
+    width: 100%;
+    margin-left: 0%;
+}
+.myact select#gn {
+    width: 35%;
+}
+input#zip {
+    width: 35%;
+}
+input#age {
+    width: 22%;
+}
+input#phone {
+    width: 30%;
+}
+input#oc {
+    width: 66%;
+}
 }
 @media only screen and (max-width: 412px) {
   .hm-cnt h2 i {
@@ -65,15 +117,20 @@
   form#signup {
     width: 100%;
   }
-  h1.logo-des {
+
+}
+@media only screen and (max-width: 400px) {
+input#phone {
+    width: 60%;
+    margin-left:0;
+}
+input#oc {
     width: 100%;
-    overflow: hidden;
-    margin: 0 auto;
-    font-size: 28px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
+}
+.radio-input {
+    width: 100%;
+}
+
 }
 @media only screen and (max-width: 375px) {
   ul#ftr li i {

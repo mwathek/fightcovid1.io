@@ -1,3 +1,4 @@
+<?php include('inc.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,25 +7,37 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link href="inner.css?v=1.2" rel="stylesheet">
 <link href="responsive.css?v=1.2" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/53bcc6fdde.js" crossorigin="anonymous"></script>
 <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
 <script defer src="https://friconix.com/cdn/friconix.js"> </script>
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
+
     </head>
 <body>
 <header>
-  <img src="logo.png" alt='Fight Covid-19 #FightCovid19'/>
+  <img src="logo.png" alt='Fight Covid-19'/>
   <ul id='nav-links'>
-    <li>About</li>
-    <li>Contact</li>
-    <li>Tips</li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
   <ul id='act'>
     <li><i class="fas fa-heartbeat"></i> Sign Up</li>
     <li id='login'><i class="fas fa-long-arrow-alt-right"></i> Login</li>
+    <li class='show-nav'>
+<a id='show'><i class="fas fa-ellipsis-v"></i></a>
+<div class='mb-nav'>
+<ul>
+    <li><i class="fas fa-house-user"></i> Home</li>
+        <li><i class="fas fa-info-circle"></i> About</li>
+                <li><i class="fas fa-at"></i> Contact</li>
+        
+</ul>
+</div>
+</li>
   </ul>
 </header>
 <div id="container">
@@ -33,8 +46,7 @@
   <h1 class='logo-des'>
     <span id='p1'>Fight</span><span id='p2'>Covid19</span>
     </h1>
-    <p>Join the Movement <span style='color:#00acee'>#FightCovid19</span><br> <span class='smlr'>Help others and get the help you need.
-    You are NOT alone in this crisis! Despite the distance we can remain a strong united community.</span></p>
+    <p><span class='smlr'>A platform designed to keep us united despite the distance. Find support in your local cummunity and help the people in need.</span></p>
     <h2><i class="fas fa-info-circle"></i> Important Reminder: Please do NOT touch your face unless you know your hands are REALLY clean. #StaySafe #BeProtected.</h2>
     <ul id="ftr">
       <li><i class="fas fa-heart"></i> Help nurses, elderly, care-givers..etc.</li>
@@ -45,14 +57,17 @@
 </ul>
     </ul>
     <form id='signup' method='POST' autocomplete="off">
-      <h3><span style='font-size:12px;'><i class="fas fa-heart"></i></span> Every Act of Kindness <span>Counts</span><br>
+      <h3>Join the Movement <span style='color:#00acee'>#FightCovid19</span><br><span style='font-size:12px;'><i class="fas fa-heart"></i></span> Every Act of Kindness <span>Counts</span><br>
     <span></h3>
-      <input id='nm' name='nm' placeholder='Full Name...' required/>
-      <input id='un' name='un' placeholder='@username...' required/>
-      <input type='email' name='ue' placeholder='@ Email...' required/>
-      <input type='password' id='up' name='uc' placeholder='Set a Password...' required/>
+    <span class='er-msg er-un'></span>
+      <input id='nm' name='name' placeholder='Full Name...' required/>
+      <input id='un' name='uname' placeholder='@username...' required/>
+      <span class='er-msg er-ue'></span>
+      <input type='email' name='email' placeholder='@ Email...' required/>
+      <span class='er-msg er-up'></span>
+      <input type='password' id='up' name='password' placeholder='Set a Password...' required/>
       <input type='password' id='uc' name='uz' placeholder='Confirm Password...' required/>
-      <button><i class="far fa-heart"></i> Join Us</button>
+      <button type="submit"> Join Us</button>
 
     </form>
     <div class='hm-info'>
@@ -72,10 +87,28 @@
 <footer>
   <p>&copy; FightCovid19.io</p>
   <ul id='so'>
-    <li id='tw'><i class="fab fa-twitter"></i></li>
-    <li id='fb'><i class="fab fa-facebook-f"></i></li>
+    <a href='https://twitter.com/FightCovid19io' target='_BLANK'><li id='tw'><i class="fab fa-twitter"></i></li></a>
+    <a href='https://www.facebook.com/fightcovid19.io/' target='_BLANK'><li id='fb'><i class="fab fa-facebook-f"></i></li></a>
   </ul>
 </footer>
-
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	  	<script src="fc19.js"></script>
 </body>
+<?php 
+
+
+$ip =  $_SERVER['REMOTE_ADDR'];   // ip = 8.8.8.8
+$country = file_get_contents('http://ipinfo.io/'.$ip.'/country'); // for more info visit [enter link description here][1] 
+
+
+if (!mysqli_query($conn,
+    "INSERT INTO track
+    (os,country,ip) 
+    VALUES 
+    ('$_SERVER[HTTP_USER_AGENT]','$_SERVER[REMOTE_ADDR]','$country'
+)"))
+  {
+  echo("Error description: " . mysqli_error($conn));
+  }
+?>
 </html>
